@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV (Lab1)</title>
+</head>
+<body>
+   <ul class="menu">
+       <li>About Me</li>
+       <li>Education</li>
+       <li>Skills</li>
+       <li>Contact</li>
+   </ul>
+   <h1>Andrii Miroshnyk</h1>
+   <img src="img\Me.jfif" alt="Andrii" width="200" height="200">
+   <h2>Education</h2>
+   <ul class="Education">  
+        <li><a href="http://gymnasia31.ck.ua/">Cherkasy Gymnasium 31, Cherkasy — High school diploma</a></li>
+        <li><a href="http://fit.univ.kiev.ua/">Taras Shevchenko National University of Kyiv, Kyiv — Bachelor's</a></li>
+   </ul>
+   <h2>Skills</h2>
+   <ul class="Skills">
+        <li>Communication</li>
+        <li>Problem Solving</li>
+        <li>Teamwork</li>
+        <li>Attention to Details</li>
+        <li>Basic Python and C++ skills</li>
+   </ul>
+   <form action="process.php" method="POST">
+        <div>
+            <label>First Name</label>
+            <input type="text" name="firstName">
+        </div>
+        <br>
+        <div>
+            <label>Last Name</label>
+            <input type="text" name="lastName">
+        </div>
+        <br>
+        <div>
+            <label>Email</label>
+            <input type="email" name="email">
+        </div>
+        <br>
+        <div>
+            <input type="submit" name="submit" value="Submit">
+        </div>
+   </form>
+<footer>
+    <div class="container">
+        <p>&#169; A.Miroshnyk 2021</p>
+    </div>
+</footer>
+</body>
+</html>
