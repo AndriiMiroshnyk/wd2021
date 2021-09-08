@@ -7,51 +7,81 @@
     <title>My CV (Lab1)</title>
 </head>
 <body>
-   <ul class="menu">
-       <li>About Me</li>
-       <li>Education</li>
-       <li>Skills</li>
-       <li>Contact</li>
-   </ul>
-   <h1>Andrii Miroshnyk</h1>
-   <img src="img\Me.jfif" alt="Andrii" width="200" height="200">
-   <h2>Education</h2>
-   <ul class="Education">  
-        <li><a href="http://gymnasia31.ck.ua/">Cherkasy Gymnasium 31, Cherkasy — High school diploma</a></li>
-        <li><a href="http://fit.univ.kiev.ua/">Taras Shevchenko National University of Kyiv, Kyiv — Bachelor's</a></li>
-   </ul>
-   <h2>Skills</h2>
-   <ul class="Skills">
-        <li>Communication</li>
-        <li>Problem Solving</li>
-        <li>Teamwork</li>
-        <li>Attention to Details</li>
-        <li>Basic Python and C++ skills</li>
-   </ul>
-   <form action="process.php" method="POST">
-        <div>
-            <label>First Name</label>
-            <input type="text" name="firstName">
+    <!-- Nav Bar -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#edu">Education</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </div>
-        <br>
-        <div>
-            <label>Last Name</label>
-            <input type="text" name="lastName">
+    </nav>
+    <!-- Hero section  -->
+    <section class="hero">
+        <div class="container">
+            <div class="about-me">
+                <h1>Andrii Miroshnyk</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                Perferendis reprehenderit temporibus quibusdam a 
+                voluptatem quis ullam mollitia saepe rerum aut, 
+                exercitationem dicta est itaque nostrum recusandae, 
+                asperiores delectus. Deleniti, vero.</p>
+            </div>
+            <div class="photo">
+                <img src="" width="200" alt="my-photo">
+            </div>
         </div>
-        <br>
-        <div>
-            <label>Email</label>
-            <input type="email" name="email">
+    </section>
+
+     <!-- Education section -->
+    <section class="education">
+        <div class="container">
+            <div id="edu" class="education">
+                <div class="card">
+                    <h2>School 31</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, asperiores.</p>
+                    <img src="#" alt="">
+                </div>
+            </div>
         </div>
-        <br>
-        <div>
-            <input type="submit" name="submit" value="Submit">
+    </section>
+    <section class="skills">
+        <div class="skills">
+            <table>
+                <tr>
+                  <th>Company</th>
+                  <th>Work Experience</th>
+                  <th>Years</th>
+                </tr>
+                <tr>
+                  <td>Google</td>
+                  <td>Junior Frontend Developer</td>
+                  <td>2019-2020</td>
+                </tr>
+                <tr>
+                  <td>EPAM Kyiv</td>
+                  <td>Middle Frontend Developer</td>
+                  <td>2020-Now</td>
+                </tr>
+              </table>
         </div>
-   </form>
-<footer>
-    <div class="container">
-        <p>&#169; A.Miroshnyk 2021</p>
-    </div>
-</footer>
+    </section>
+    <section class="contact">
+        <div class="form">
+            <form action="/action_page.php" method="POST">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" value="John"><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname" value="Doe"><br><br>
+                <input type="submit" value="Submit">
+              </form> 
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&#169; A.Miroshnyk 2021</p>
+        </div>
+    </footer>
 </body>
 </html>
