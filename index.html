@@ -6,30 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My CV (Lab1)</title>
 </head>
-<body>
-    <!-- Nav Bar -->
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#edu">Education</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<body background="C:\Users\andri\Desktop\wd2021\lab1\img\Background.jfif">
+   <header id="header"> 
+       <!-- Nav Bar -->
+        <nav id="navi" class="navigation">
+            <div class="container">
+                <ul>
+                    <li><a href="#edu">Education</a></li>
+                    <li><a href="#skill">Skills</a></li>
+                    <li><a href="#cont">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     <!-- Hero section  -->
     <section class="hero">
         <div class="container">
             <div class="about-me">
-                <h1>Andrii Miroshnyk</h1>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                Perferendis reprehenderit temporibus quibusdam a 
-                voluptatem quis ullam mollitia saepe rerum aut, 
-                exercitationem dicta est itaque nostrum recusandae, 
-                asperiores delectus. Deleniti, vero.</p>
+                <center><h1>Andrii Miroshnyk</h1> </center>
+                <center><p>Student of Taras Shevchenko National University of Kyiv</p> </center>
             </div>
             <div class="photo">
-                <img src="" width="200" alt="my-photo">
+                <center><img src="C:\Users\andri\Desktop\wd2021\lab1\img\My-photo.jpeg" width="200" alt="my-photo"></center><br>
             </div>
         </div>
     </section>
@@ -37,47 +36,57 @@
      <!-- Education section -->
     <section class="education">
         <div class="container">
-            <div id="edu" class="education">
+            <div id="edu" class="my-education">
                 <div class="card">
-                    <h2>School 31</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, asperiores.</p>
-                    <img src="#" alt="">
+                    <table align="center">
+                        <tr align="center">
+                          <th>School/Uni</th>
+                          <th>Years of studying</th>
+                        </tr>
+                        <tr align="center">
+                          <td>Cherkasy Gymnasium №31</td>
+                          <td>2009-2020</td>
+                        </tr>
+                        <tr align="center">
+                          <td>Taras Shevchenko National University of Kyiv</td>
+                          <td>2020-Now</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Skills section -->
     <section class="skills">
-        <div class="skills">
-            <table>
-                <tr>
-                  <th>Company</th>
-                  <th>Work Experience</th>
-                  <th>Years</th>
-                </tr>
-                <tr>
-                  <td>Google</td>
-                  <td>Junior Frontend Developer</td>
-                  <td>2019-2020</td>
-                </tr>
-                <tr>
-                  <td>EPAM Kyiv</td>
-                  <td>Middle Frontend Developer</td>
-                  <td>2020-Now</td>
-                </tr>
-              </table>
+        <div class="container">
+            <div id="skill" class="my-skills">
+                <ul>
+                    <li><a href="Soft-skills.html">Soft skills</a></li>
+                    <li><a href="Hard-skills.html">Hard skills</a></li>
+                </ul>
+            </div>
         </div>
     </section>
+
+    <!-- Contact form -->
     <section class="contact">
-        <div class="form">
-            <form action="/action_page.php" method="POST">
-                <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname" value="John"><br>
-                <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname" value="Doe"><br><br>
-                <input type="submit" value="Submit">
-              </form> 
+        <div class="container">
+            <div id="cont" class="form">
+                <center>
+                    <form action="/action_page.php" method="POST">
+                        <label for="fname">First name:</label><br>
+                        <input type="text" id="fname" name="fname"><br><br>
+                        <label for="lname">Last name:</label><br>
+                        <input type="text" id="lname" name="lname"><br><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </center>
+            </div>  
         </div>
     </section>
+
+    <!-- footer -->
     <footer>
         <div class="container">
             <p>&#169; A.Miroshnyk 2021</p>
