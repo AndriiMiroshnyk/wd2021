@@ -195,12 +195,38 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"js/main.js":[function(require,module,exports) {
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"img/arsenal.png":[function(require,module,exports) {
+module.exports = "/arsenal.e3d7bda4.png";
+},{}],"img/barcelona.png":[function(require,module,exports) {
+module.exports = "/barcelona.1eefd885.png";
+},{}],"img/bayern.png":[function(require,module,exports) {
+module.exports = "/bayern.378d3db3.png";
+},{}],"img/juventus.png":[function(require,module,exports) {
+module.exports = "/juventus.8fdcb4f5.png";
+},{}],"img/psg.png":[function(require,module,exports) {
+module.exports = "/psg.4b3e6885.png";
+},{}],"img/main-jersey.png":[function(require,module,exports) {
+module.exports = "/main-jersey.a7eea7f1.png";
+},{}],"img/realmadrid.png":[function(require,module,exports) {
+module.exports = "/realmadrid.5bc0a0ea.png";
+},{}],"img/*.png":[function(require,module,exports) {
+module.exports = {
+  "arsenal": require("./arsenal.png"),
+  "barcelona": require("./barcelona.png"),
+  "bayern": require("./bayern.png"),
+  "juventus": require("./juventus.png"),
+  "psg": require("./psg.png"),
+  "main-jersey": require("./main-jersey.png"),
+  "realmadrid": require("./realmadrid.png")
+};
+},{"./arsenal.png":"img/arsenal.png","./barcelona.png":"img/barcelona.png","./bayern.png":"img/bayern.png","./juventus.png":"img/juventus.png","./psg.png":"img/psg.png","./main-jersey.png":"img/main-jersey.png","./realmadrid.png":"img/realmadrid.png"}],"js/main.js":[function(require,module,exports) {
 "use strict";
 
 require("boxicons/css/boxicons.min.css");
 
 require("../scss/style.scss");
+
+var _ = require("../img/*.png");
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -211,38 +237,38 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var additem = document.querySelectorAll('.add__item');
 var listGoods = [{
   number: 1,
-  title: "arsenal",
-  img: "./img/arsenal.png",
+  title: 'arsenal',
+  img: _.arsenal,
   price: 80,
   inCart: 0
 }, {
   number: 2,
-  title: "barcelona",
-  img: "./img/barcelona.png",
+  title: 'barcelona',
+  img: _.barcelona,
   price: 90,
   inCart: 0
 }, {
   number: 3,
-  title: "realmadrid",
-  img: "./img/realmadrid.png",
+  title: 'realmadrid',
+  img: _.realmadrid,
   price: 100,
   inCart: 0
 }, {
   number: 4,
-  title: "bayern",
-  img: "./img/bayern.png",
+  title: 'bayern',
+  img: _.bayern,
   price: 80,
   inCart: 0
 }, {
   number: 5,
-  title: "juventus",
-  img: "./img/juventus.png",
+  title: 'juventus',
+  img: _.juventus,
   price: 110,
   inCart: 0
 }, {
   number: 6,
-  title: "psg",
-  img: "./img/psg.png",
+  title: 'psg',
+  img: _.psg,
   price: 120,
   inCart: 0
 }];
@@ -313,19 +339,19 @@ function totalCost(product) {
 function displayCart() {
   var cartItems = localStorage.getItem("goodsInCart");
   cartItems = JSON.parse(cartItems);
-  var goodsContainer = document.querySelector(".goods-container .products");
+  var goodsContainer = document.querySelector(".products");
 
   if (cartItems && goodsContainer) {
     goodsContainer.innerHTML = '';
     Object.values(cartItems).map(function (item) {
-      goodsContainer.innerHTML += "\n            <div class = \"product\">\n                <p>".concat(item.number, "</p>\n                <img src=\"./img/").concat(item.img, "\"></img>\n                <span>").concat(item.title, " Strip</span>\n            </div>\n            <div class = \"price\">").concat(item.price, "</div>\n            <div class = \"quantity\">\n                <i class='bx bxs-left-arrow'></i>\n                <span>").concat(item.inCart, "</span>\n                <i class='bx bxs-right-arrow'></i>\n            </div>\n            <div class=\"total\">\n                ").concat(item.inCart * item.price, "\n            </div>\n            ");
+      goodsContainer.innerHTML += "\n            <div class=\"product_container\">\n            <p>".concat(item.number, "</p>\n               <div class = \"product\">\n                   <div class=\"product_name\">\n                   <img src=\"").concat(item.img, "\"></img>\n                   <span>").concat(item.title, " Strip</span>\n                   </div>\n               </div>\n               <div class = \"price\">").concat(item.price, "</div>\n               <div class = \"quantity\">\n                   <i class='bx bxs-left-arrow'></i>\n                   <span>").concat(item.inCart, "</span>\n                   <i class='bx bxs-right-arrow'></i>\n               </div>\n               <div class=\"total\">\n                   ").concat(item.inCart * item.price, "\n               </div>\n               <div class=\"remove-product\">\n                    <i class='bx bxs-minus-circle bx-sm'></i>\n               </div>\n               ");
     });
   }
 }
 
 onLoadCartNum();
 displayCart();
-},{"boxicons/css/boxicons.min.css":"../node_modules/boxicons/css/boxicons.min.css","../scss/style.scss":"scss/style.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"boxicons/css/boxicons.min.css":"../node_modules/boxicons/css/boxicons.min.css","../scss/style.scss":"scss/style.scss","../img/*.png":"img/*.png"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -353,7 +379,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56380" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58034" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
