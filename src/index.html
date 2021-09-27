@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="scss/style.css" />
+</head>
+
+<body>
+    <header id="header" class="header">
+        <nav class="nav">
+            <div class="nav__center container">
+                <div class="logo">
+                    <h1>Football Store</h1>
+                </div>
+
+                <div class="nav__menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#header" class="nav__link">Home</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#goods" class="nav__link">Goods</a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="cart flex__center">
+                        <span>
+                            <a href="cart.html"><i class='bx bx-cart bx-md'></i></a><span class="num">0</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <div class="hero__center container">
+                <div class="hero__left">
+                    <div class="main-text">
+                        <h1>New Football Strip Shop</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, voluptatum!</p>
+                        <a href="#goods" class="button">SHOP NOW</a>
+                    </div>
+                </div>
+
+                <div class="hero__right">
+                    <div class="jersey-img">
+                        <img src="img/main-jersey.png" alt="main-jersey">
+                    </div>
+
+                    <a href="#goods" class="go-down flex__center">
+                        <i class='bx bx-down-arrow-circle bx-md bx-fade-down-hover'></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <section id="goods" class="goods">
+            <div class="container">
+                <div class="title">
+                    <h1>All Goods</h1>
+                </div>
+                <div class="goods-center">
+                    <div id="goods-card" class="goods-card flex__center">
+                        <div class="goods__img">
+                            <img src="img/arsenal.png" alt="image">
+                        </div>
+                        <div class="goods__main">
+                            <h2>Arsenal</h2>
+                            <h4 class="price">$80</h4>
+                            <button type="button" class="add__item">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div id="goods-card" class="goods-card flex__center">
+                        <div class="goods__img">
+                            <img src="img/barcelona.png" alt="image">
+                        </div>
+                        <div class="goods__main">
+                            <h2>Barcelona</h2>
+                            <h4 class="price">$90</h4>
+                            <button type="button" class="add__item">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div id="goods-card" class="goods-card flex__center">
+                        <div class="goods__img">
+                            <img src="img/realmadrid.png" alt="image">
+                        </div>
+                        <div class="goods__main">
+                            <h2>Real Madrid</h2>
+                            <h4 class="price">$100</h4>
+                            <button type="button" class="add__item">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div id="goods-card" class="goods-card flex__center">
+                        <div class="goods__img">
+                            <img src="img/bayern.png" alt="image">
+                        </div>
+                        <div class="goods__main">
+                            <h2>Bayern Munchen</h2>
+                            <h4 class="price">$80</h4>
+                            <button type="button" class="add__item">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div id="goods-card" class="goods-card flex__center">
+                        <div class="goods__img">
+                            <img src="img/juventus.png" alt="image">
+                        </div>
+                        <div class="goods__main">
+                            <h2>Juventus</h2>
+                            <h4 class="price">$110</h4>
+                            <button type="button" class="add__item">ADD TO CART</button>
+                        </div>
+                    </div>
+                    <div id="goods-card" class="goods-card flex__center">
+                        <div class="goods__img">
+                            <img src="img/psg.png" alt="image">
+                        </div>
+                        <div class="goods__main">
+                            <h2>PSG</h2>
+                            <h4 class="price">$120</h4>
+                            <button type="button" class="add__item">ADD TO CART</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>GET IN TOUCH</h2>
+                <div class="contact-form">
+                    <form action="action_page.php">
+                        <label for="name">First Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name..">
+                        <label for="E-Mail">E-Mail</label>
+                        <input type="text" id="E-Mail" name="E-Mail" placeholder="E-Mail..">
+                        <label for="subject">Message</label>
+                        <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="socialmedia-and-copyright">
+                <div class="social">
+                    <a href="https://www.instagram.com/"><i class='bx bxl-instagram bx-sm' ></i></a>
+                    <a href="https://www.facebook.com/"><i class='bx bxl-facebook-square bx-sm' ></i></a>
+                    <a href="https://twitter.com/"><i class='bx bxl-twitter bx-sm' ></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&#169; 2021 A.Miroshnyk. All Rights Reserved</p>
+                </div>
+                <a href="#header" class="go-up flex__center">
+                    <i class='bx bx-up-arrow-circle bx-md bx-fade-up-hover'></i>
+                </a>
+            </div> 
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
