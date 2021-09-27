@@ -22,7 +22,7 @@ for (let i = 0; i < additem.length; i++) {
 function onLoadCartNum() {
     let goodsNumbers = localStorage.getItem('cartNumbers');
     if (goodsNumbers) {
-        document.querySelector('.cart .num').textContent = goodsNumbers;
+        document.getElementsByClassName('.cart .num').textContent = goodsNumbers;
     }
 }
 
@@ -75,15 +75,24 @@ function totalCost(product){
 function displayCart(){
     let cartItems = localStorage.getItem("goodsInCart");
     cartItems = JSON.parse(cartItems);
-    let goodsContainer = document.querySelector(".goods-container");
+    let goodsContainer = document.querySelector(".goods-container .products");
     if(cartItems && goodsContainer) {
         goodsContainer.innerHTML = '';
         Object.values(cartItems).map(item => {
             goodsContainer.innerHTML += `
-            <div class = "products">
-                <p>${number}</p>
-                <img src="./img/${img}"></img>
-                <span>${title}</span>
+            <div class = "product">
+                <p>${item.number}</p>
+                <img src="./img/${item.img}"></img>
+                <span>${item.title} Strip</span>
+            </div>
+            <div class = "price">${item.price}</div>
+            <div class = "quantity">
+                <i class='bx bxs-left-arrow'></i>
+                <span>${item.inCart}</span>
+                <i class='bx bxs-right-arrow'></i>
+            </div>
+            <div class="total">
+                ${item.inCart * item.price}
             </div>
             `
         });

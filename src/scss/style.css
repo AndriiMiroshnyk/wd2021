@@ -209,18 +209,36 @@ footer .go-up {
   height: 15vh;
 }
 
-.main-cart {
-  justify-content: space-around;
+.goods-container {
   margin-top: 1rem;
   background-color: white;
 }
-.main-cart .cart-title {
-  margin-bottom: 2rem;
-  font-size: 32px;
-}
-.main-cart .product-header {
+.goods-container .product-header {
   display: flex;
-  justify-content: space-between;
-  margin-right: 1rem;
+  justify-content: flex-start;
+  margin-right: 3rem;
   border-bottom: 4px solid blue;
+}
+.goods-container .product-header .product-number {
+  width: 10%;
+}
+.goods-container .product-header .product-title {
+  width: 25%;
+}
+.goods-container .product-header .price {
+  width: 25%;
+  display: flex;
+  align-items: center;
+}
+.goods-container .product-header .quantity {
+  width: 30%;
+  display: flex;
+  text-align: center;
+}
+.goods-container .product-header .product {
+  width: 45%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
 }/*# sourceMappingURL=style.css.map */

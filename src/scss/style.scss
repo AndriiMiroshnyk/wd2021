@@ -226,18 +226,37 @@ footer {
     height: 15vh;
 }
 
-.main-cart{
-    justify-content: space-around;
+.goods-container{
     margin-top: 1rem;
     background-color: $w-main;
-    .cart-title{
-        margin-bottom: 2rem;
-        font-size: 32px;
-    }
+
     .product-header{
         display: flex;
-        justify-content: space-between;
-        margin-right: 1rem;
+        justify-content: flex-start;
+        margin-right: 3rem;
         border-bottom: 4px solid $c-main;
+        .product-number{
+            width: 10%;
+        }
+        .product-title{
+            width: 25%;
+        }
+        .price{
+            width: 25%;
+            display: flex;
+            align-items: center;
+        }
+        .quantity{
+            width: 30%;
+            display: flex;
+            text-align: center;
+        }
+        .product{
+            width: 45%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+        }
     }
 }

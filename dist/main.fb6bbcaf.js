@@ -262,7 +262,7 @@ function onLoadCartNum() {
   var goodsNumbers = localStorage.getItem('cartNumbers');
 
   if (goodsNumbers) {
-    document.querySelector('.cart .num').textContent = goodsNumbers;
+    document.getElementsByClassName('.cart .num').textContent = goodsNumbers;
   }
 }
 
@@ -313,12 +313,12 @@ function totalCost(product) {
 function displayCart() {
   var cartItems = localStorage.getItem("goodsInCart");
   cartItems = JSON.parse(cartItems);
-  var goodsContainer = document.querySelector(".goods-container");
+  var goodsContainer = document.querySelector(".goods-container .products");
 
   if (cartItems && goodsContainer) {
     goodsContainer.innerHTML = '';
     Object.values(cartItems).map(function (item) {
-      goodsContainer.innerHTML += "\n            <div class = \"products\">\n                <p>".concat(number, "</p>\n                <img src=\"./img/").concat(img, "\"></img>\n                <span>").concat(title, "</span>\n            </div>\n            ");
+      goodsContainer.innerHTML += "\n            <div class = \"product\">\n                <p>".concat(item.number, "</p>\n                <img src=\"./img/").concat(item.img, "\"></img>\n                <span>").concat(item.title, " Strip</span>\n            </div>\n            <div class = \"price\">").concat(item.price, "</div>\n            <div class = \"quantity\">\n                <i class='bx bxs-left-arrow'></i>\n                <span>").concat(item.inCart, "</span>\n                <i class='bx bxs-right-arrow'></i>\n            </div>\n            <div class=\"total\">\n                ").concat(item.inCart * item.price, "\n            </div>\n            ");
     });
   }
 }
@@ -353,7 +353,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56011" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56380" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
