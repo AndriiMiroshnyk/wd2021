@@ -197,29 +197,29 @@ module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"img/arsenal.png":[function(require,module,exports) {
 module.exports = "/arsenal.e3d7bda4.png";
-},{}],"img/barcelona.png":[function(require,module,exports) {
-module.exports = "/barcelona.1eefd885.png";
-},{}],"img/bayern.png":[function(require,module,exports) {
-module.exports = "/bayern.378d3db3.png";
 },{}],"img/juventus.png":[function(require,module,exports) {
 module.exports = "/juventus.8fdcb4f5.png";
-},{}],"img/psg.png":[function(require,module,exports) {
-module.exports = "/psg.4b3e6885.png";
+},{}],"img/bayern.png":[function(require,module,exports) {
+module.exports = "/bayern.378d3db3.png";
 },{}],"img/main-jersey.png":[function(require,module,exports) {
 module.exports = "/main-jersey.a7eea7f1.png";
+},{}],"img/psg.png":[function(require,module,exports) {
+module.exports = "/psg.4b3e6885.png";
 },{}],"img/realmadrid.png":[function(require,module,exports) {
 module.exports = "/realmadrid.5bc0a0ea.png";
+},{}],"img/barcelona.png":[function(require,module,exports) {
+module.exports = "/barcelona.1eefd885.png";
 },{}],"img/*.png":[function(require,module,exports) {
 module.exports = {
   "arsenal": require("./arsenal.png"),
-  "barcelona": require("./barcelona.png"),
-  "bayern": require("./bayern.png"),
   "juventus": require("./juventus.png"),
-  "psg": require("./psg.png"),
+  "bayern": require("./bayern.png"),
   "main-jersey": require("./main-jersey.png"),
-  "realmadrid": require("./realmadrid.png")
+  "psg": require("./psg.png"),
+  "realmadrid": require("./realmadrid.png"),
+  "barcelona": require("./barcelona.png")
 };
-},{"./arsenal.png":"img/arsenal.png","./barcelona.png":"img/barcelona.png","./bayern.png":"img/bayern.png","./juventus.png":"img/juventus.png","./psg.png":"img/psg.png","./main-jersey.png":"img/main-jersey.png","./realmadrid.png":"img/realmadrid.png"}],"js/main.js":[function(require,module,exports) {
+},{"./arsenal.png":"img/arsenal.png","./juventus.png":"img/juventus.png","./bayern.png":"img/bayern.png","./main-jersey.png":"img/main-jersey.png","./psg.png":"img/psg.png","./realmadrid.png":"img/realmadrid.png","./barcelona.png":"img/barcelona.png"}],"js/main.js":[function(require,module,exports) {
 "use strict";
 
 require("boxicons/css/boxicons.min.css");
@@ -340,17 +340,28 @@ function displayCart() {
   var cartItems = localStorage.getItem("goodsInCart");
   cartItems = JSON.parse(cartItems);
   var goodsContainer = document.querySelector(".products");
+  var cartCost = localStorage.getItem('totalCost');
 
   if (cartItems && goodsContainer) {
     goodsContainer.innerHTML = '';
     Object.values(cartItems).map(function (item) {
-      goodsContainer.innerHTML += "\n            <div class=\"product_container\">\n            <p>".concat(item.number, "</p>\n               <div class = \"product\">\n                   <div class=\"product_name\">\n                   <img src=\"").concat(item.img, "\"></img>\n                   <span>").concat(item.title, " Strip</span>\n                   </div>\n               </div>\n               <div class = \"price\">").concat(item.price, "</div>\n               <div class = \"quantity\">\n                   <i class='bx bxs-left-arrow'></i>\n                   <span>").concat(item.inCart, "</span>\n                   <i class='bx bxs-right-arrow'></i>\n               </div>\n               <div class=\"total\">\n                   ").concat(item.inCart * item.price, "\n               </div>\n               <div class=\"remove-product\">\n                    <i class='bx bxs-minus-circle bx-sm'></i>\n               </div>\n               ");
+      goodsContainer.innerHTML += "\n            <div class=\"product_container\">\n            <p>".concat(item.number, "</p>\n               <div class = \"product\">\n                   <div class=\"product_name\">\n                   <img src=\"").concat(item.img, "\"></img>\n                   <span>").concat(item.title, " Strip</span>\n                   </div>\n               </div>\n               <div class = \"price\">").concat(item.price, "</div>\n               <div class = \"quantity\">\n                   <span>").concat(item.inCart, "</span>\n               </div>\n               <div class=\"total\">\n                   ").concat(item.inCart * item.price, "\n               </div>\n               ");
     });
+    goodsContainer.innerHTML += "\n        <div class=\"cartTotalContainer\">\n            <h3 class=\"cartTotalTitle\">Cart Total</h3>\n            <h3 class=\"cartTotal\">".concat(cartCost, "</h3>\n        </div>\n        ");
   }
-}
+} // function removeCart() {
+//     let remItems;
+//     let but = document.getElementsByClassName('rem-but');
+//     if (but) {
+//         but.addEventListener('click', () => {
+//             remItems = localStorage.removeItem('goodsInCart');
+//         })
+//     }
+// }
+
 
 onLoadCartNum();
-displayCart();
+displayCart(); // removeCart();
 },{"boxicons/css/boxicons.min.css":"../node_modules/boxicons/css/boxicons.min.css","../scss/style.scss":"scss/style.scss","../img/*.png":"img/*.png"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -379,7 +390,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58034" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56525" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

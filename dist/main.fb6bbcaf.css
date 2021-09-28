@@ -253,7 +253,7 @@ footer .go-up {
   margin: 1rem 0;
 }
 .goods-container .product_container .price {
-  margin-right: 260px;
+  margin-right: 280px;
   margin-top: 3rem;
 }
 .goods-container .product_container .quantity {
@@ -264,10 +264,24 @@ footer .go-up {
 }
 .goods-container .product_container .total {
   margin-top: 3rem;
-  margin-left: auto;
-  margin-right: 4.5rem;
+  margin-left: 13rem;
+  margin-right: 4rem;
 }
-.goods-container .product_container .remove-product {
-  margin-top: 3rem;
+.goods-container .buttons {
+  margin: 2rem 0 2rem 30rem;
+}
+.goods-container .buttons .cart-button, .goods-container .buttons .rem-but {
+  padding: 0.5rem;
+  color: #f1ebeb;
+  background-color: blue;
+}
+.goods-container .cartTotalContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 0;
+}
+.goods-container .cartTotalContainer .cartTotalTitle {
+  margin-right: 2rem;
 }
 /*# sourceMappingURL=/main.fb6bbcaf.css.map */

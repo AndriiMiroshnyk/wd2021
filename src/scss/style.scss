@@ -272,7 +272,7 @@ footer {
             margin: 1rem 0;
 
             .price {
-                margin-right: 260px;
+                margin-right: 280px;
                 margin-top: 3rem;
             }
             .quantity {
@@ -284,12 +284,26 @@ footer {
 
             .total {
                 margin-top: 3rem;
-                margin-left: auto;
-                margin-right: 4.5rem;
+                margin-left: 13rem;
+                margin-right: 4rem;
             }
-            .remove-product{
-                margin-top: 3rem;
-            }
+        }
+    }
+    .buttons {
+        margin: 2rem 0 2rem 30rem;
+        .cart-button, .rem-but  {
+            padding: 0.5rem;
+            color: $b-main;
+            background-color: $c-main;
+        }
+    }
+    .cartTotalContainer{
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        padding: 10px 0;
+        .cartTotalTitle{
+            margin-right: 2rem;
         }
     }
 }

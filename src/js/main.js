@@ -107,13 +107,13 @@ function totalCost(product) {
     } else {
         localStorage.setItem("totalCost", product.price);
     }
-
 }
 
 function displayCart() {
     let cartItems = localStorage.getItem("goodsInCart");
     cartItems = JSON.parse(cartItems);
     let goodsContainer = document.querySelector(".products");
+    let cartCost = localStorage.getItem('totalCost');
     if (cartItems && goodsContainer) {
         goodsContainer.innerHTML = '';
         Object.values(cartItems).map((item) => {
@@ -128,20 +128,34 @@ function displayCart() {
                </div>
                <div class = "price">${item.price}</div>
                <div class = "quantity">
-                   <i class='bx bxs-left-arrow'></i>
                    <span>${item.inCart}</span>
-                   <i class='bx bxs-right-arrow'></i>
                </div>
                <div class="total">
                    ${item.inCart * item.price}
                </div>
-               <div class="remove-product">
-                    <i class='bx bxs-minus-circle bx-sm'></i>
-               </div>
                `
         });
+        goodsContainer.innerHTML += `
+        <div class="cartTotalContainer">
+            <h3 class="cartTotalTitle">Cart Total</h3>
+            <h3 class="cartTotal">${cartCost}</h3>
+        </div>
+        `
     }
 }
 
+// function removeCart() {
+//     let remItems;
+
+//     let but = document.getElementsByClassName('rem-but');
+//     if (but) {
+//         but.addEventListener('click', () => {
+//             remItems = localStorage.removeItem('goodsInCart');
+//         })
+//     }
+// }
+
 onLoadCartNum();
 displayCart();
+
+// removeCart();
