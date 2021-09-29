@@ -138,7 +138,7 @@ function displayCart() {
                <div class = "product">
                    <div class="product_name">
                    <img src="${item.img}"></img>
-                   <span>${item.title} Strip</span>
+                   <span>${item.title}</span>
                    </div>
                </div>
                <div class = "price">${item.price}</div>
@@ -177,15 +177,17 @@ function manageQuantity() {
 
     for(let i=0; i < increaseButtons.length; i++) {
         decreaseButtons[i].addEventListener('click', () => {
-            console.log(cartItems);
-            currentQuantity = decreaseButtons[i].parentElement.querySelector('span').textContent;
-            console.log(currentQuantity);
-            currentProduct = decreaseButtons[i].parentElement.previousElementSibling.previousElementSibling.querySelector('span').textContent.toLocaleLowerCase().replace(/ /g,'').trim();
-            console.log(currentProduct);
+            console.log(cartItems, 'bla');
+            currentQuantity = +decreaseButtons[i].parentElement.querySelector('span').textContent;
+            console.log(currentQuantity, 'asda');
+            let currentProductElement = decreaseButtons[i].parentElement.previousElementSibling.previousElementSibling.querySelector('span')
+            currentProduct = currentProductElement.textContent.toLocaleLowerCase().replace(/ /g,'').trim();
+            console.log(currentProduct, 'asd');
+            console.log(cartItems[currentProduct], 'qwe')
 
             if( cartItems[currentProduct].inCart > 1 ) {
                 cartItems[currentProduct].inCart -= 1;
-                cartNum(cartItems[currentProduct], "decrease");
+                cartNum(cartItems[currentProduct], "decrease", currentProductElement);
                 totalCost(cartItems[currentProduct], "decrease");
                 localStorage.setItem('goodsInCart', JSON.stringify(cartItems));
                 displayCart();
@@ -196,11 +198,12 @@ function manageQuantity() {
             console.log(cartItems);
             currentQuantity = increaseButtons[i].parentElement.querySelector('span').textContent;
             console.log(currentQuantity);
-            currentProduct = increaseButtons[i].parentElement.previousElementSibling.previousElementSibling.querySelector('span').textContent.toLocaleLowerCase().replace(/ /g,'').trim();
+            let currentProdcutElement = increaseButtons[i].parentElement.previousElementSibling.previousElementSibling.querySelector('span')
+            currentProduct = currentProdcutElement.textContent.toLocaleLowerCase().replace(/ /g,'').trim();
             console.log(currentProduct);
 
             cartItems[currentProduct].inCart += 1;
-            cartNum(cartItems[currentProduct]);
+            cartNum(cartItems[currentProduct], null, currentProdcutElement);
             totalCost(cartItems[currentProduct]);
             localStorage.setItem('goodsInCart', JSON.stringify(cartItems));
             displayCart();
