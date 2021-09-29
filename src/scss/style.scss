@@ -232,16 +232,18 @@ footer {
 
     .product-header {
         display: flex;
-        justify-content: flex-start;
-        margin-right: 3rem;
+        justify-content: center;
+        width: 100%;
         border-bottom: 4px solid $c-main;
         .product-number {
-            width: 10%;
+            width: 12%;
             display: flex;
+            margin-right: 1rem;
         }
         .product-title {
             width: 25%;
             display: flex;
+            margin-right: 1.5rem;
         }
         .price {
             width: 25%;
@@ -249,61 +251,124 @@ footer {
             align-items: center;
         }
         .quantity {
-            width: 30%;
+            width: 27%;
             display: flex;
             text-align: center;
+            margin-right: 1rem;
+        }
+        .total {
+            width: 20%;
         }
     }
     .product {
+        width: 22%;
         img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
             width: 200px;
             height: 200px;
+            min-width: 200px;
+            min-height: 200px;
+        }
+        span{
+            text-align: left;
         }
 
         &_name {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-right: 160px;
         }
 
         &_container {
             display: flex;
+            justify-content: center;
             margin: 1rem 0;
 
             .price {
-                margin-right: 280px;
-                margin-top: 3rem;
+                flex: 1;
+                width: auto;
+                text-align: center;
             }
             .quantity {
-                margin-top: 3rem;
+                flex: 1;
+                width: auto;
+                text-align: center;
+                .bxs-left-arrow{
+                    cursor: pointer;
+                }
+                .bxs-right-arrow{
+                    cursor: pointer;
+                }
             }
             p {
-                margin-right: 50px;
+                max-width: 5%;
+                flex: 1;
             }
 
             .total {
-                margin-top: 3rem;
-                margin-left: 13rem;
-                margin-right: 4rem;
+                width: 20%;
+                flex: 1;
+                width: auto;
+                text-align: center;
+            }
+            .remove-button{
+                .bxs-checkbox-minus{
+                    cursor: pointer;
+                }
             }
         }
     }
     .buttons {
-        margin: 2rem 0 2rem 30rem;
-        .cart-button, .rem-but  {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 2rem;
+        .cart-button {
             padding: 0.5rem;
+            margin-right: 1rem;
             color: $b-main;
             background-color: $c-main;
         }
     }
-    .cartTotalContainer{
+    .cartTotalContainer {
         display: flex;
         justify-content: flex-end;
         width: 100%;
         padding: 10px 0;
-        .cartTotalTitle{
+        .cartTotalTitle {
             margin-right: 2rem;
+        }
+    }
+}
+
+.confirm-section{
+    margin-top: 1rem;
+    padding-top: 5rem;
+    background-color: $w-main;
+    height: 51.5vh;
+    .order-confirmed{
+        text-align: center;
+        h1{
+            font-size: 36px;
+            margin-bottom: 1rem;
+        }
+        h2{
+            font-size: 32px;
+        }
+        h3{
+            font-size: 24px;
+            margin-bottom: 2rem;
+        }
+    }
+    .buttons {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 2rem;
+        .cart-button {
+            padding: 0.5rem;
+            color: $b-main;
+            background-color: $c-main;
         }
     }
 }

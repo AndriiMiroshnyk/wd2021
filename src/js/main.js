@@ -64,10 +64,16 @@ function onLoadCartNum() {
     }
 }
 
-function cartNum(product) {
+function cartNum(product, action) {
     let goodsNumbers = localStorage.getItem('cartNumbers');
     goodsNumbers = parseInt(goodsNumbers);
-    if (goodsNumbers) {
+    let cartItems = localStorage.getItem('goodsInCart');
+    cartItems = JSON.parse(cartItems);
+
+    if (action){
+        localStorage.setItem("cartNumbers", goodsNumbers - 1);
+        document.querySelector('.cart .num').textContent = goodsNumbers - 1;
+    } else if (goodsNumbers) {
         localStorage.setItem('cartNumbers', goodsNumbers + 1);
         document.querySelector('.cart .num').textContent = goodsNumbers + 1;
     } else {
@@ -80,14 +86,17 @@ function cartNum(product) {
 function setItems(product) {
     let cartItems = localStorage.getItem('goodsInCart');
     cartItems = JSON.parse(cartItems);
+
     if (cartItems != null) {
-        if (cartItems[product.title] == undefined) {
+        let currentProduct = product.title;
+
+        if (cartItems[currentProduct] == undefined) {
             cartItems = {
                 ...cartItems,
-                [product.title]: product
+                [currentProduct]: product
             }
         }
-        cartItems[product.title].inCart += 1;
+        cartItems[currentProduct].inCart += 1;
     } else {
         product.inCart = 1;
 
@@ -98,10 +107,13 @@ function setItems(product) {
     localStorage.setItem("goodsInCart", JSON.stringify(cartItems));
 }
 
-function totalCost(product) {
+function totalCost(product, action) {
     let cartCost = localStorage.getItem('totalCost');
 
-    if (cartCost != null) {
+    if (action) {
+        cartCost = parseInt(cartCost);
+        localStorage.setItem("totalCost", cartCost - product.price);
+    } else if (cartCost != null) {
         cartCost = parseInt(cartCost);
         localStorage.setItem("totalCost", cartCost + product.price);
     } else {
@@ -112,11 +124,14 @@ function totalCost(product) {
 function displayCart() {
     let cartItems = localStorage.getItem("goodsInCart");
     cartItems = JSON.parse(cartItems);
-    let goodsContainer = document.querySelector(".products");
     let cartCost = localStorage.getItem('totalCost');
+    cartCost = parseInt(cartCost);
+
+    let goodsContainer = document.querySelector(".products");
+
     if (cartItems && goodsContainer) {
         goodsContainer.innerHTML = '';
-        Object.values(cartItems).map((item) => {
+        Object.values(cartItems).map((item, index) => {
             goodsContainer.innerHTML += `
             <div class="product_container">
             <p>${item.number}</p>
@@ -128,10 +143,15 @@ function displayCart() {
                </div>
                <div class = "price">${item.price}</div>
                <div class = "quantity">
-                   <span>${item.inCart}</span>
+                    <i class='bx bxs-left-arrow'></i>
+                    <span class="inCartItems">${item.inCart}</span>
+                    <i class='bx bxs-right-arrow'></i>
                </div>
                <div class="total">
                    ${item.inCart * item.price}
+               </div>
+               <div class="remove-button">
+                    <i class='bx bxs-checkbox-minus bx-sm'></i>
                </div>
                `
         });
@@ -141,21 +161,77 @@ function displayCart() {
             <h3 class="cartTotal">${cartCost}</h3>
         </div>
         `
+
+        deleteButtons();
+        manageQuantity();
     }
 }
 
-// function removeCart() {
-//     let remItems;
+function manageQuantity() {
+    let decreaseButtons = document.querySelectorAll('.bxs-left-arrow');
+    let increaseButtons = document.querySelectorAll('.bxs-right-arrow');
+    let currentQuantity = 0;
+    let currentProduct = '';
+    let cartItems = localStorage.getItem('goodsInCart');
+    cartItems = JSON.parse(cartItems);
 
-//     let but = document.getElementsByClassName('rem-but');
-//     if (but) {
-//         but.addEventListener('click', () => {
-//             remItems = localStorage.removeItem('goodsInCart');
-//         })
-//     }
-// }
+    for(let i=0; i < increaseButtons.length; i++) {
+        decreaseButtons[i].addEventListener('click', () => {
+            console.log(cartItems);
+            currentQuantity = decreaseButtons[i].parentElement.querySelector('span').textContent;
+            console.log(currentQuantity);
+            currentProduct = decreaseButtons[i].parentElement.previousElementSibling.previousElementSibling.querySelector('span').textContent.toLocaleLowerCase().replace(/ /g,'').trim();
+            console.log(currentProduct);
+
+            if( cartItems[currentProduct].inCart > 1 ) {
+                cartItems[currentProduct].inCart -= 1;
+                cartNum(cartItems[currentProduct], "decrease");
+                totalCost(cartItems[currentProduct], "decrease");
+                localStorage.setItem('goodsInCart', JSON.stringify(cartItems));
+                displayCart();
+            }
+        });
+
+        increaseButtons[i].addEventListener('click', () => {
+            console.log(cartItems);
+            currentQuantity = increaseButtons[i].parentElement.querySelector('span').textContent;
+            console.log(currentQuantity);
+            currentProduct = increaseButtons[i].parentElement.previousElementSibling.previousElementSibling.querySelector('span').textContent.toLocaleLowerCase().replace(/ /g,'').trim();
+            console.log(currentProduct);
+
+            cartItems[currentProduct].inCart += 1;
+            cartNum(cartItems[currentProduct]);
+            totalCost(cartItems[currentProduct]);
+            localStorage.setItem('goodsInCart', JSON.stringify(cartItems));
+            displayCart();
+        });
+    }
+}
+
+function deleteButtons() {
+    let deleteButtons = document.querySelectorAll('.bxs-checkbox-minus');
+    let productNumbers = localStorage.getItem('cartNumbers');
+    let cartCost = localStorage.getItem("totalCost");
+    let cartItems = localStorage.getItem('goodsInCart');
+    cartItems = JSON.parse(cartItems);
+    let productName;
+    console.log(cartItems);
+
+    for(let i=0; i < deleteButtons.length; i++) {
+        deleteButtons[i].addEventListener('click', () => {
+            productName = deleteButtons[i].parentElement.textContent.toLocaleLowerCase().replace(/ /g,'').trim();
+           
+            localStorage.setItem('cartNumbers', productNumbers - cartItems[productName].inCart);
+            localStorage.setItem('totalCost', cartCost - ( cartItems[productName].price * cartItems[productName].inCart));
+
+            delete cartItems[productName];
+            localStorage.setItem('goodsInCart', JSON.stringify(cartItems));
+
+            displayCart();
+            onLoadCartNum();
+        })
+    }
+}
 
 onLoadCartNum();
 displayCart();
-
-// removeCart();
