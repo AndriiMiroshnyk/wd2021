@@ -16,6 +16,7 @@
     "sass": "^1.42.1"
   },
   "dependencies": {
-    "boxicons": "^2.0.9"
+    "boxicons": "^2.0.9",
+    "json": "^11.0.0"
   }
 }

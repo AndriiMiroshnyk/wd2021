@@ -1,7 +1,7 @@
 let weather = {
     "apiKey": "cd15f1258b94312f5095e52787e99ef8",
     fetchWeather: function (city) {
-        fetch("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + this.apiKey)
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + "&units=metric&appid=" + this.apiKey)
             .then((response) => response.json())
             .then((data) => this.displayWeather(data));
     },
@@ -27,7 +27,7 @@ document.querySelector(".search button").addEventListener("click", function () {
 });
 
 function getImage() {
-    fetch("https://jsonplaceholder.typicode.com/photos")
+    fetch('https://jsonplaceholder.typicode.com/photos')
         .then((response) => response.json())
         .then((data) => {
             let content = data.splice(0, 6);
@@ -47,16 +47,36 @@ function getImage() {
 
 getImage();
 
-function goodDay() {
-    fetch("", {
-        headers : { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-         }
-  
-      })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
+function getJSON() {
+    fetch('./json/data.json', {
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
+    .then(function(response){
+        console.log(response);
+        return response.json();
+    })
+    .then(function(myJSON){
+        let container = document.querySelector('.end-container');
+        container.innerHTML += `
+        <div class="good-day">
+            <h2>${myJSON.title}</h2>
+            <img src="${myJSON.url}" alt="img" width="150">
+        </div>
+        `
+    });
 }
 
-goodDay();
+getJSON();
+
+// fetch('../json/data.json', {
+//     headers: {
+//         'Content-Type': 'application/json',
+//         'Accept': 'application/json'
+//     }
+
+// })
+//     .then((response) => response.json())
+//     .then((data) => console.log(data))
