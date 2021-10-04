@@ -1,4 +1,6 @@
 $main-text-color: white;
+$main-bg-color: black;
+$add-bg-color: blanchedalmond;
 
 * {
     box-sizing: border-box;
@@ -7,68 +9,68 @@ $main-text-color: white;
     scroll-behavior: smooth;
 }
 
-header{
-    background-color: black;
+header {
+    background-color: $main-bg-color;
     color: $main-text-color;
     font-family: "Dosis", sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2rem 5%;
-    h1{
+    h1 {
         cursor: pointer;
     }
-    .nav-links{
+    .nav-links {
         list-style: none;
-        li{
+        li {
             display: inline-block;
             padding: 0 1rem;
         }
-        li, a{
+        li,
+        a {
             font-size: 24px;
             text-decoration: none;
             color: $main-text-color;
             transition: all 0.3s ease 0s;
         }
-        li a:hover{
+        li a:hover {
             color: lightblue;
         }
     }
 }
 
-.weather-forecast{
+.weather-forecast {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
     background: #222;
     background-image: url("https://source.unsplash.com/1600x900/?landscape");
     font-family: "Dosis", sans-serif;
-    .weather-card{
+    .weather-card {
         background-color: #000000d0;
-        color: white;
+        color: $main-text-color;
         padding: 2rem;
         border-radius: 2rem;
         width: 100%;
         max-width: 420px;
         margin: 1rem;
-        .search{
+        .search {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 1rem;
-            input.search-bar{
+            input.search-bar {
                 width: calc(100% - 4rem);
                 border-radius: 24px;
                 border: none;
                 outline: none;
-                padding: .4rem 1rem;
+                padding: 0.4rem 1rem;
                 font-family: inherit;
                 font-size: 110%;
             }
-            button{
-                margin: .5rem;
+            button {
+                margin: 0.5rem;
                 border-radius: 50%;
                 border: none;
                 outline: none;
@@ -77,46 +79,43 @@ header{
                 cursor: pointer;
                 transition: 0.2s ease-in-out;
             }
-            button:hover{
+            button:hover {
                 background-color: lightgray;
             }
         }
-        .weather{
+        .weather {
             font-size: 120%;
-            .temperature{
-                margin: 0;
-                margin-bottom: .5rem;
+            .temperature {
+                margin-bottom: 0.5rem;
             }
-            .icon-and-description{
+            .icon-and-description {
                 display: flex;
                 align-items: center;
-                .description{
+                .description {
                     text-transform: capitalize;
-                    margin-left: .5rem;
+                    margin-left: 0.5rem;
                 }
             }
-            
         }
     }
 }
 
-.photos{
+.photos {
     height: 100%;
-    margin: 0;
-    background-color: blanchedalmond;
+    background-color: $add-bg-color;
     font-family: "Dosis", sans-serif;
     padding: 2rem 5%;
-    h1{
+    h1 {
         text-align: center;
         font-size: 28px;
         margin-bottom: 2rem;
     }
-    .photo-cards{
+    .photo-cards {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
-        .photo-card{
+        .photo-card {
             min-width: 20rem;
             background-color: $main-text-color;
             width: 30%;
@@ -127,6 +126,51 @@ header{
     }
 }
 
-.the-end{
-    height: 30vh;
+.the-end {
+    height: 40%;
+    font-family: "Dosis", sans-serif;
+    padding: 2rem 5%;
+    h1 {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 2rem;
+    }
+    .end-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        div {
+            width: 30%;
+            text-align: center;
+            font-size: 24px;
+            margin: 1rem;
+            background-color: $add-bg-color;
+            padding: 0.5rem;
+            max-height: 5rem;
+        }
+    }
+}
+
+footer {
+    background-color: $main-bg-color;
+    color: $main-text-color;
+    font-family: "Dosis", sans-serif;
+    padding: 1rem 5%;
+    font-size: 20px;
+    i{
+        color: $main-text-color;
+    }
+    .socialmedia-and-copyright {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        .social {
+            flex: 1;
+        }
+        .copyright {
+            margin-right: 2rem;
+        }
+    }
 }

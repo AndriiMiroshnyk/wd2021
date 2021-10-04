@@ -47,36 +47,27 @@ function getImage() {
 
 getImage();
 
-function getJSON() {
-    fetch('./json/data.json', {
+fetch('./json/data.json', {
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         }
     })
-    .then(function(response){
-        console.log(response);
+    .then(function (response) {
         return response.json();
     })
-    .then(function(myJSON){
-        let container = document.querySelector('.end-container');
-        container.innerHTML += `
-        <div class="good-day">
-            <h2>${myJSON.title}</h2>
-            <img src="${myJSON.url}" alt="img" width="150">
-        </div>
-        `
+    .then(function (data) {
+        appendData(data);
+    })
+    .catch(function (err) {
+        console.log(err);
     });
+
+function appendData(data) {
+    let mainContainer = document.getElementById("myData");
+    for (let i = 0; i < data.length; i++) {
+        let div = document.createElement("div");
+        div.innerHTML = data[i].firstName + ' ' + data[i].lastName;
+        mainContainer.appendChild(div);
+    }
 }
-
-getJSON();
-
-// fetch('../json/data.json', {
-//     headers: {
-//         'Content-Type': 'application/json',
-//         'Accept': 'application/json'
-//     }
-
-// })
-//     .then((response) => response.json())
-//     .then((data) => console.log(data))

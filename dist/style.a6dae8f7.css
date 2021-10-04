@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+header {
+  background-color: black;
+  color: white;
+  font-family: "Dosis", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5%;
+}
+header h1 {
+  cursor: pointer;
+}
+header .nav-links {
+  list-style: none;
+}
+header .nav-links li {
+  display: inline-block;
+  padding: 0 1rem;
+}
+header .nav-links li,
+header .nav-links a {
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease 0s;
+}
+header .nav-links li a:hover {
+  color: lightblue;
+}
+
+.weather-forecast {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #222;
+  background-image: url("https://source.unsplash.com/1600x900/?landscape");
+  font-family: "Dosis", sans-serif;
+}
+.weather-forecast .weather-card {
+  background-color: #000000d0;
+  color: white;
+  padding: 2rem;
+  border-radius: 2rem;
+  width: 100%;
+  max-width: 420px;
+  margin: 1rem;
+}
+.weather-forecast .weather-card .search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.weather-forecast .weather-card .search input.search-bar {
+  width: calc(100% - 4rem);
+  border-radius: 24px;
+  border: none;
+  outline: none;
+  padding: 0.4rem 1rem;
+  font-family: inherit;
+  font-size: 110%;
+}
+.weather-forecast .weather-card .search button {
+  margin: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  height: 2.2rem;
+  width: 2.2rem;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.weather-forecast .weather-card .search button:hover {
+  background-color: lightgray;
+}
+.weather-forecast .weather-card .weather {
+  font-size: 120%;
+}
+.weather-forecast .weather-card .weather .temperature {
+  margin-bottom: 0.5rem;
+}
+.weather-forecast .weather-card .weather .icon-and-description {
+  display: flex;
+  align-items: center;
+}
+.weather-forecast .weather-card .weather .icon-and-description .description {
+  text-transform: capitalize;
+  margin-left: 0.5rem;
+}
+
+.photos {
+  height: 100%;
+  background-color: blanchedalmond;
+  font-family: "Dosis", sans-serif;
+  padding: 2rem 5%;
+}
+.photos h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 2rem;
+}
+.photos .photo-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.photos .photo-cards .photo-card {
+  min-width: 20rem;
+  background-color: white;
+  width: 30%;
+  height: 240px;
+  margin: 1rem;
+  text-align: center;
+}
+
+.the-end {
+  height: 40%;
+  font-family: "Dosis", sans-serif;
+  padding: 2rem 5%;
+}
+.the-end h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 2rem;
+}
+.the-end .end-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.the-end .end-container div {
+  width: 30%;
+  text-align: center;
+  font-size: 24px;
+  margin: 1rem;
+  background-color: blanchedalmond;
+  padding: 0.5rem;
+  max-height: 5rem;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  font-family: "Dosis", sans-serif;
+  padding: 1rem 5%;
+  font-size: 20px;
+}
+footer i {
+  color: white;
+}
+footer .socialmedia-and-copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer .socialmedia-and-copyright .social {
+  flex: 1;
+}
+footer .socialmedia-and-copyright .copyright {
+  margin-right: 2rem;
+}
+
+/*# sourceMappingURL=/style.a6dae8f7.css.map */
