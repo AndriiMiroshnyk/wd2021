@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Informer Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="scss/style.scss" />
+    <script src="js/main.js" defer></script>
 </head>
+
 <body>
-    
+    <header>
+        <h1>Informer Website</h1>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#weather-forecast">Weather</a></li>
+                <li><a href="#photos">Images</a></li>
+                <li><a href="#">Have a good day!</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="weather-forecast" class="weather-forecast">
+        <div class="weather-card">
+            <div class="search">
+                <input type="text" class="search-bar" placeholder="Search">
+                <button><i class='bx bx-search bx-xs'></i></button>
+            </div>
+            <div class="weather">
+                <h2 class="city">Weather in Kyiv</h2>
+                <h1 class="temperature">12°C</h1>
+                <div class="icon-and-description">
+                    <img src="https://openweathermap.org/img/wn/04n.png" alt="weather-icon" class="icon" />
+                    <div class="description">Cloudy</div>
+                </div>
+                <div class="humidity">Humidity: 50%</div>
+                <div class="wind">Wind: 6 km/h</div>
+            </div>
+        </div>
+    </section>
+    <section id="photos" class="photos">
+        <h1>Images</h1>
+        <div class="photo-cards">
+            
+        </div>
+    </section>
+    <section id="the-end" class="the-end">
+
+    </section>
 </body>
+
 </html>

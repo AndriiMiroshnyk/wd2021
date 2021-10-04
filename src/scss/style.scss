@@ -1,0 +1,128 @@
+$main-text-color: white;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+header{
+    background-color: black;
+    color: $main-text-color;
+    font-family: "Dosis", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    h1{
+        cursor: pointer;
+    }
+    .nav-links{
+        list-style: none;
+        li{
+            display: inline-block;
+            padding: 0 1rem;
+        }
+        li, a{
+            font-size: 24px;
+            text-decoration: none;
+            color: $main-text-color;
+            transition: all 0.3s ease 0s;
+        }
+        li a:hover{
+            color: lightblue;
+        }
+    }
+}
+
+.weather-forecast{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #222;
+    background-image: url("https://source.unsplash.com/1600x900/?landscape");
+    font-family: "Dosis", sans-serif;
+    .weather-card{
+        background-color: #000000d0;
+        color: white;
+        padding: 2rem;
+        border-radius: 2rem;
+        width: 100%;
+        max-width: 420px;
+        margin: 1rem;
+        .search{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+            input.search-bar{
+                width: calc(100% - 4rem);
+                border-radius: 24px;
+                border: none;
+                outline: none;
+                padding: .4rem 1rem;
+                font-family: inherit;
+                font-size: 110%;
+            }
+            button{
+                margin: .5rem;
+                border-radius: 50%;
+                border: none;
+                outline: none;
+                height: 2.2rem;
+                width: 2.2rem;
+                cursor: pointer;
+                transition: 0.2s ease-in-out;
+            }
+            button:hover{
+                background-color: lightgray;
+            }
+        }
+        .weather{
+            font-size: 120%;
+            .temperature{
+                margin: 0;
+                margin-bottom: .5rem;
+            }
+            .icon-and-description{
+                display: flex;
+                align-items: center;
+                .description{
+                    text-transform: capitalize;
+                    margin-left: .5rem;
+                }
+            }
+            
+        }
+    }
+}
+
+.photos{
+    height: 90vh;
+    margin: 0;
+    background-color: blanchedalmond;
+    font-family: "Dosis", sans-serif;
+    padding: 2rem 5%;
+    h1{
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 2rem;
+    }
+    .photo-cards{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        .photo-card{
+            background-color: $main-text-color;
+            width: 30%;
+            height: 240px;
+            margin: 1rem;
+            text-align: center;
+        }
+    }
+    
+}
